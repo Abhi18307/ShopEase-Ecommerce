@@ -1,2 +1,18 @@
-# ShopEase-Ecommerce
-A responsive e-commerce web app with product listing, cart, authentication and order history.
+# ShopEase - E-Commerce Website
+
+A responsive e-commerce website built using HTML, CSS and JavaScript.
+
+## Features
+- Product Listing
+- Search Products
+- Shopping Cart
+- Add to Cart Functionality
+- Responsive Design
+
+## Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+
+## Author
+Abhishant kumar
