@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - E-Commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">
+            <h1>ShopEase</h1>
+            <p>Your one-stop online store</p>
+        </div>
+        <div class="header-actions">
+            <div class="search-wrap">
+                <input id="searchInput" type="search" placeholder="Search products..." aria-label="Search products">
+            </div>
+            <div class="user-actions">
+                <span id="userBadge" class="user-badge hidden"></span>
+                <button id="ordersButton" class="secondary-button hidden">Orders</button>
+                <button id="authButton" class="secondary-button">Login</button>
+                <button id="cartButton" class="cart-button" aria-label="Open cart">
+                    <span>Cart</span>
+                    <span id="cartCount" class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div>
+                <h2>Discover great deals every day</h2>
+                <p>Browse bestselling products, add to cart, and checkout in seconds.</p>
+            </div>
+            <button id="shopNowButton" class="primary-button">Shop Now</button>
+        </section>
+
+        <section class="products-section">
+            <div class="section-header">
+                <h3>Featured Products</h3>
+                <p>Select items to add to your cart.</p>
+            </div>
+            <div id="productsGrid" class="products-grid"></div>
+        </section>
+    </main>
+
+    <aside id="cartDrawer" class="cart-drawer hidden" aria-hidden="true">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button id="closeCartButton" class="close-button" aria-label="Close cart">×</button>
+        </div>
+        <div id="cartItems" class="cart-items"></div>
+        <div class="cart-summary">
+            <div>
+                <span>Subtotal</span>
+                <strong id="cartTotal">$0.00</strong>
+            </div>
+            <button id="checkoutButton" class="checkout-button">Checkout</button>
+        </div>
+    </aside>
+
+    <div id="paymentModal" class="payment-modal hidden" aria-hidden="true">
+        <div class="payment-dialog">
+            <div class="payment-header">
+                <h3>Payment Details</h3>
+                <button id="closePaymentButton" class="close-button" aria-label="Close payment form">×</button>
+            </div>
+            <form id="paymentForm">
+                <label class="payment-label">
+                    Payment method
+                    <select id="paymentMethod">
+                        <option value="card">Credit Card</option>
+                        <option value="paypal">PayPal</option>
+                    </select>
+                </label>
+                <div id="cardFields" class="payment-fields">
+                    <label class="payment-label">
+                        Cardholder name
+                        <input id="cardName" type="text" placeholder="Jane Doe" required>
+                    </label>
+                    <label class="payment-label">
+                        Card number
+                        <input id="cardNumber" type="text" inputmode="numeric" placeholder="1234 5678 9012 3456" required>
+                    </label>
+                    <div class="payment-grid">
+                        <label class="payment-label">
+                            Expiry
+                            <input id="cardExpiry" type="text" placeholder="MM/YY" required>
+                        </label>
+                        <label class="payment-label">
+                            CVC
+                            <input id="cardCvc" type="text" inputmode="numeric" placeholder="123" required>
+                        </label>
+                    </div>
+                </div>
+                <div id="paypalInfo" class="payment-fields hidden">
+                    <p>Secure checkout via PayPal. You will be redirected after placing the order.</p>
+                </div>
+                <button type="submit" class="checkout-button">Pay <span id="paymentAmount">$0.00</span></button>
+            </form>
+        </div>
+    </div>
+
+    <div id="authModal" class="payment-modal hidden" aria-hidden="true">
+        <div class="payment-dialog">
+            <div class="payment-header">
+                <h3 id="authTitle">Login</h3>
+                <button id="closeAuthButton" class="close-button" aria-label="Close login form">×</button>
+            </div>
+            <div class="auth-mode-switch">
+                <button id="authModeLogin" type="button" class="mode-btn active">Login</button>
+                <button id="authModeSignup" type="button" class="mode-btn">Sign Up</button>
+            </div>
+            <form id="authForm" class="payment-form">
+                <label class="payment-label">
+                    Email address
+                    <input id="authEmail" type="email" placeholder="you@example.com" required>
+                </label>
+                <label class="payment-label">
+                    Password
+                    <input id="authPassword" type="password" placeholder="Enter password" required>
+                </label>
+                <p id="authMessage" class="auth-message"></p>
+                <button type="submit" class="checkout-button">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="orderHistoryModal" class="payment-modal hidden" aria-hidden="true">
+        <div class="payment-dialog">
+            <div class="payment-header">
+                <h3>Order History</h3>
+                <button id="closeOrdersButton" class="close-button" aria-label="Close order history">×</button>
+            </div>
+            <div id="ordersList" class="order-list"></div>
+        </div>
+    </div>
+
+    <div id="overlay" class="overlay hidden"></div>
+
+    <footer class="site-footer">
+        <p>ShopEase © 2026. Crafted for modern shopping experiences.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
